@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Actions</th>
+  </tr>
+  <tr class="users" *ngFor="let user of users;">
+    <td class="id">{{user.id}}</td>
+    <td class="name">{{user.name}}</td>
+    <td class="email">{{user.email}}</td>
+    <td class="phone">{{user.phone}}</td>
+    <td class="website">{{user.website}}</td>
+    <td class="actions">
+      <button [id]="user.id" (click)="onRemove(user.id)">Remove</button>
+      <button [id]="user.id" (click)="obfuscateEmail(user.id)">Obfuscate e-mail</button>
+    </td>
+  </tr>
+</table>
